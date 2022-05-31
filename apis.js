@@ -184,7 +184,63 @@ if(nxtBtns){
 
 
 
-  
-  
+//Login script
+  const loginBtn = document.querySelector(".login-btn");
+  const emailLogin = document.getElementById("email-login");
+  const passwordlogin = document.getElementById("password-login");
+  if(loginBtn){
+    loginBtn.addEventListener("click", function (event) {
+   
+      event.preventDefault();
+       let data = new FormData();
+ 
+       data.append('email', emailLogin.value);
+       data.append('password', passwordlogin.value);
+       
+       axios({
+         method: 'post',
+         url: 'http://localhost/backend/php/login.php',
+         data: data,
+     }).then(function (response) {
+          
+          //console.log(response.data["id"]);
+ 
+          let dataV2 = new FormData();
+                 dataV2.append('id', response.data["id"])
+                 axios({
+                     method: 'post',
+                     url: 'http://localhost/backend/php/get_user_type.php',
+                     data: dataV2
+                     
+                 }).then(function (type_response) {
+         
+ 
+                   if(response.data["success"]){
+                       if (type_response.data[0]['type'] == 1) {  
+                         localStorage.setItem("id", response.data["id"]);
+                         location.href = 'http://localhost/frontend/restaurant.html';
+                     }
+                       if (type_response.data[0]['type'] == 2) {
+                         localStorage.setItem("id", response.data["id"]);
+                         location.href = 'http://localhost/frontend/adminpanel.html';
+                     
+                     }
+ 
+                         }
+                        else{
+                           alert("worong email or password!")
+                         } 
+ 
+ 
+                 })
+ 
+     })
+       
+ 
+   
+ 
+ });
+  }
 
 
+  
