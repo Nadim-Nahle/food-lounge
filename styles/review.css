@@ -44,6 +44,14 @@ a{
     flex-wrap: wrap;
     width: 100%;
 }
+.review-box-container-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .review-box{
     width:500px;
     box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
