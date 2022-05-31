@@ -65,10 +65,10 @@ img {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 3.4rem;
   margin-top: 0;
   text-align: center;
-  font-weight: 500;
+  font-weight: 510;
 }
 
 h2 {
@@ -192,7 +192,10 @@ header {
 }
 
 .logo {
-  width: 7%;
+  max-width: 7%;
+}
+.logo > img {
+  max-width: 100%;
 }
 
 /* ******************************************* */
@@ -327,6 +330,7 @@ footer a:visited {
   align-items: center;
   align-content: center;
   display: flex;
+  padding-top: 70px;
 }
 
 .select-box .options-container {
@@ -540,6 +544,9 @@ fieldset {
   color: #888;
 }
 
+.logo > img{
+  width: 100px;
+}
 /* ******************************************* */
 /* hero */
 /* ******************************************* */
