@@ -265,6 +265,56 @@ footer a {
   color: #000;
 }
 
+/* user profile */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 2em 0;
+  text-align: center;
+  padding: 1em;
+  min-width: 250px;
+}
+
+.card > .title {
+  color: grey;
+  font-size: 18px;
+}
+
+.user_dp {
+  border-radius: 10em;
+  width: 80px;
+  border: 1px solid black;
+}
+
+.profile-btn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.profile-btn:hover,
+a:hover {
+  opacity: 0.7;
+}
+
+.user-reviews {
+  padding: 1em;
+}
+
 /* media queries */
 
 @media (min-width: 800px) {
