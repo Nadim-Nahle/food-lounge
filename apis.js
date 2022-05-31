@@ -1,5 +1,3 @@
-// Signup Script
-
 let signupBtn = document.getElementById("sign-up-btn");
 if( signupBtn){
   signupBtn.addEventListener("click", function(event){
@@ -19,6 +17,9 @@ if( signupBtn){
     .then(function (response) {
       let result = (response.data);
       let message = result.status;
+      if(result.success){
+        location.href = 'http://localhost/frontend/login.html';
+      };
 
                 
     })
@@ -242,86 +243,86 @@ if(nxtBtns){
  });
   }
 
-//monitor reviews
+
+  //monitor reviews
 
   
-window.addEventListener('load', (event) => {
+  window.addEventListener('load', (event) => {
 
-  let newReview;
-  let newDesc;
-  let newStatus;
-  let data = new FormData();
-  data.append('name', newReview);
-  data.append('message', newDesc);
-  data.append('status', newStatus);
+    let newReview;
+    let newDesc;
+    let newStatus;
+    let data = new FormData();
+    data.append('name', newReview);
+    data.append('message', newDesc);
+    data.append('status', newStatus);
 
-  axios({
-    method: 'post',
-    url: 'http://localhost/backend/php/get_reviews.php',
-    data: data,
-})
-    .then(function(response) {
-      
-      let result=(response.data);
-      //console.log(result.length);
-      for (let i =0; i<result.length; i++){
-        newReview1 = (result[i].name);
-        newDesc1 =(result[i].message);
-        let newStatus =(result[i].status);
-        //console.log(newStatus);
+    axios({
+      method: 'post',
+      url: 'http://localhost/backend/php/get_reviews.php',
+      data: data,
+  })
+      .then(function(response) {
         
+        let result=(response.data);
+        //console.log(result.length);
+        for (let i =0; i<result.length; i++){
+          newReview1 = (result[i].name);
+          newDesc1 =(result[i].message);
+          let newStatus =(result[i].status);
+          //console.log(newStatus);
+          
 
-        const reviewboxcontainer = document.querySelector(".review-box-container-1");
-        const reviewbox = document.createElement("div");
-        reviewbox.classList.add("review-box");
+          const reviewboxcontainer = document.querySelector(".review-box-container-1");
+          const reviewbox = document.createElement("div");
+          reviewbox.classList.add("review-box");
+ 
+          const boxtop = document.createElement("div");
+          reviewbox.classList.add("box-top");
+ 
+          const profile = document.createElement("div");
+          reviewbox.classList.add("profile");
+ 
+          const nameuser = document.createElement("div");
+          reviewbox.classList.add("name-user");
+ 
+          const strong = document.createElement("STRONG");
+ 
+          const usercomment = document.createElement("div");
+          usercomment.classList.add("user-comment");
+ 
+          const p = document.createElement("p");
 
-        const boxtop = document.createElement("div");
-        reviewbox.classList.add("box-top");
+          const deletenew = document.createElement("div");
+          deletenew.classList.add("l"+i);
 
-        const profile = document.createElement("div");
-        reviewbox.classList.add("profile");
-
-        const nameuser = document.createElement("div");
-        reviewbox.classList.add("name-user");
-
-        const strong = document.createElement("STRONG");
-
-        const usercomment = document.createElement("div");
-        usercomment.classList.add("user-comment");
-
-        const p = document.createElement("p");
-
-        const deletenew = document.createElement("div");
-        deletenew.classList.add("l"+i);
-
-        const deleteReview = document.createElement("button");
-        deleteReview.innerHTML = "delete review";
-
-         
-        reviewboxcontainer.appendChild(reviewbox);
-        reviewbox.appendChild(boxtop);
-        boxtop.appendChild(profile);
-        reviewboxcontainer.appendChild(deletenew);
-        deletenew.appendChild(deleteReview);
-        profile.appendChild(nameuser);
-        nameuser.appendChild(strong);
-        
-        reviewbox.appendChild(usercomment);
-        usercomment.appendChild(p);
-        if(newStatus === 0){
-          strong.innerHTML = newReview1;
-          p.innerHTML = newDesc1;
+          const deleteReview = document.createElement("button");
+          deleteReview.innerHTML = "delete review";
+ 
+           
+          reviewboxcontainer.appendChild(reviewbox);
+          reviewbox.appendChild(boxtop);
+          boxtop.appendChild(profile);
+          reviewboxcontainer.appendChild(deletenew);
+          deletenew.appendChild(deleteReview);
+          profile.appendChild(nameuser);
+          nameuser.appendChild(strong);
+          
+          reviewbox.appendChild(usercomment);
+          usercomment.appendChild(p);
+          if(newStatus === 0){
+            strong.innerHTML = newReview1;
+            p.innerHTML = newDesc1;
+          }
         }
-      }
-      
-    })
+        
+      })
 
-             
-})
-
-
-
-
+               
+  })
 
 
   
+  
+
+
