@@ -5,8 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foodlounge</title>
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
+    <header class="header-dash">
+      <div class="container row">
+        <button class="nav-toggle" aria-label="open navigation">
+          <span class="hamburger"></span>
+        </button>
+        <a class="logo" href="#">
+          <img src="./assets/img/newlogo.png" alt="store logo" />
+        </a>
+        <nav class="nav">
+          <ul class="nav__list nav__list--primary">
+            <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+          </ul>
+          <ul class="nav__list nav__list--secondary">
+            <li class="nav__item">
+              <a href="./register.html" class="nav__link">Logout</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <div class="container">
       <table border="1" id="listtable"></table>
     </div>
