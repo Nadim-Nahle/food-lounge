@@ -23,11 +23,26 @@ body {
 img {
   max-width: 100%;
 }
-.monitorreviews {
+
+.action-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 1em;
+}
+
+.userlist-btn {
+  color: #fff;
+}
+
+.monitorreviews,
+.getusers {
   text-align: center;
   padding-top: 20px;
 }
-.monitorreviews > button {
+.monitorreviews > button,
+.getusers > button {
   text-align: center;
   border: 1px solid;
   background: #f10101;
@@ -39,6 +54,15 @@ img {
   outline: none;
   width: 300px;
   height: 100px;
+}
+
+.getusers > button {
+  bottom: 0;
+  padding: 0;
+}
+
+admin-form {
+  margin-top: 0;
 }
 
 .intro {
