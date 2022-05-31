@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>profile</title>
+  </head>
+  <body>
+    <header class="header-dash">
+      <div class="container row">
+        <button class="nav-toggle" aria-label="open navigation">
+          <span class="hamburger"></span>
+        </button>
+        <a class="logo" href="#">
+          <img src="./assets/img/newlogo.png" alt="store logo" />
+        </a>
+        <nav class="nav">
+          <ul class="nav__list nav__list--primary">
+            <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+          </ul>
+          <ul class="nav__list nav__list--secondary">
+            <li class="nav__item">
+              <a href="./register.html" class="nav__link">Logout</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- user-section -->
+    <div class="container">
+      <div class="row">
+        <div class="user-profile">
+          <div class="card">
+            <img
+              class="user_dp"
+              src="./images/user_profile.png"
+              alt="user"
+              style="width: 100%"
+            />
+            <h2>John Doe</h2>
+            <p class="title">user bio</p>
+            <p><button class="profile-btn">Delete account</button></p>
+          </div>
+        </div>
+        <div class="user-reviews">
+          <div class="review">
+            <h2>Recent Reviews</h2>
+            <h3>restaurant 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea porro
+              explicabo quod atque maxime! Iste reiciendis, quos cupiditate
+              dolor voluptates mollitia debitis sint ut nemo reprehenderit
+              explicabo qui doloremque delectus corporis nisi eum in atque nulla
+              voluptas odio. Accusantium accusamus aut voluptatibus totam ipsum
+              facilis quas
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Footer legal -->
+      <section class="ft-legal">
+        <ul class="ft-legal-list container">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2022 Food Lounge Inc.</li>
+        </ul>
+      </section>
+    </footer>
+  </body>
+</html>
