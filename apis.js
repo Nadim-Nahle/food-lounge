@@ -116,3 +116,75 @@ let newImage = document.getElementById("new-image ")
   })
   }
   
+// Get restaurants script
+let nxtBtns = document.querySelector(".nxt-btn")
+if(nxtBtns){
+  window.addEventListener('load', (event) => {
+
+    let restName;
+    let restDescription;
+    let data = new FormData();
+    data.append('name', restName);
+    data.append('description', restDescription);
+
+    axios({
+      method: 'post',
+      url: 'http://localhost/backend/php/get_restaurants.php',
+      data: data,
+  })
+      .then(function(response) {
+        
+        let result=(response.data);
+        //console.log(result.length);
+        for (let i =0; i<result.length; i++){
+          newName = (result[i].name);
+          newDescription =(result[i].description);
+
+          
+          const restContainer = document.querySelector(".rest-container");
+          const restCard = document.createElement("div");
+          restCard.classList.add("rest-card");
+
+          const restImage = document.createElement("div");
+          restImage.classList.add("rest-image");
+
+          const restInfo = document.createElement("div");
+          restInfo.classList.add("rest-info");
+
+          const a = document.createElement("a");
+
+          const img = document.createElement("img");
+          img.classList.add("rest-thumb");
+
+          const h2 = document.createElement("h2");
+          h2.classList.add("rest-name");
+          h2.innerHTML=newName;
+
+          const p1 = document.createElement("p");
+          p1.classList.add("rest-short-description");
+          p1.innerHTML=newDescription;
+
+          restContainer.appendChild(restCard);
+          restCard.appendChild(restImage);
+          restImage.appendChild(a);
+          a.appendChild(img);
+          restCard.appendChild(restInfo);
+          restInfo.appendChild(h2);
+          restInfo.appendChild(p1);
+          a.setAttribute('href', "review.html")
+        }
+        
+      })
+
+               
+  })
+
+}
+
+
+
+
+  
+  
+
+
