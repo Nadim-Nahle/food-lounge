@@ -86,7 +86,33 @@ if(button){
     })
 })
 }
-
+// Add restaurant script 
+let restBtn = document.getElementById("contact-submit");
+let newImage = document.getElementById("new-image ")
+  if(restBtn){
+    restBtn.addEventListener("click", function(event){
+      window.open('restaurant.html');
+      event.preventDefault();
+      
+      const restName = document.getElementById("rest-name").value;
+      const restDescription = document.getElementById("rest-description").value;
+      let data = new FormData();
+      data.append('name', restName);
+      data.append('description', restDescription);
+      axios({
+          method: 'post',
+          url: 'http://localhost/backend/php/add_restaurant.php',
+          data: data,
+      })
+      .then(function (response) {
+        let result = (response.data);
+        let message = result.status;
+        window.open('restaurant.html');
+        
+        
+                  
+      })
+      
+  })
+  }
   
-
-
